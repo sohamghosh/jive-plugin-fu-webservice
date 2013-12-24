@@ -1,0 +1,28 @@
+<plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://www.jivesoftware.com/schemas/clearspace/2_5/plugin.xsd">
+    <name>TestWebservice</name>
+    <description>TestWebservice</description>
+    <author>Soham</author>
+    <version>1.0.0</version>
+
+    <minServerVersion>6.0</minServerVersion>
+    <maxServerVersion>6.0</maxServerVersion>
+    
+    <class>org.tw.spike.jive.plugin.ws.SamplePlugin</class>
+
+	<!-- 
+    <authorURL>
+    <pluginURL>
+    <databaseKey>
+    <databaseVersion>
+    <components>
+    <css>
+    <soy>
+    <javascript>
+    <widget>
+    <macro>
+    <urlmapping>
+    <sitemesh>
+	-->
+
+</plugin>
