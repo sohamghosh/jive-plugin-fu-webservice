@@ -7,17 +7,8 @@
 <body>
 
 <div ng-app="demoApp">
-
-    <div ng-controller="SimpleController">
-        Name: <input type="text" ng-model="name"/>
-        <br/>
-
-        <ul>
-            <li ng-repeat="cust in customers | filter:name | orderBy:'city'">
-                {{cust.name | uppercase}} - {{cust.city | lowercase}}
-            </li>
-        </ul>
-
+    <div>
+        <div ng-view=""></div>
     </div>
 </div>
 
