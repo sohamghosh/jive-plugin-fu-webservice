@@ -1,25 +1,32 @@
 package org.tw.spike.jive.plugin.ws;
 
 import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-@Consumes("application/json")
-@Produces("application/json")
+import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
+
+
 public interface FuRestService {
 
     @GET
     @Path("/test")
-    String test();
+    @Produces(APPLICATION_JSON)
+    Response test();
+
+    @POST
+    @Path("/testp")
+    @Produces(APPLICATION_JSON)
+    Response testp();
 
     @GET
-    @Path("/test/response")
-    Response testResponse();
+    @Path("/user")
+    @Produces(APPLICATION_JSON)
+    User user();
 
     @POST
-    @Path("/submit")
-    Response submit(User user);
-
-    @POST
-    @Path("/go")
-    Response go();
+    @Path("/userx")
+    @Produces(APPLICATION_JSON)
+    @Consumes(APPLICATION_JSON)
+    Response user(User user);
 }
