@@ -10,17 +10,33 @@
 
     <bean class="org.tw.spike.jive.plugin.ws.FuPlugin"/>
 
-    <bean id="fuNavMenuLink" class="com.jivesoftware.community.navbar.NavMenuLink" scope="prototype">
+    <bean id="fuWSNavMenuLink" class="com.jivesoftware.community.navbar.NavMenuLink" scope="prototype">
         <property name="ID" value="fu-ws"/>
         <property name="nameKey" value="Fu WS"/>
         <property name="linkCss" value="j-globalNavLink j-ui-elem"/>
         <property name="url" value="/fu/ws.jspa"/>
     </bean>
 
+    <bean id="fuJSNavMenuLink" class="com.jivesoftware.community.navbar.NavMenuLink" scope="prototype">
+        <property name="ID" value="fu-js"/>
+        <property name="nameKey" value="Fu JS"/>
+        <property name="linkCss" value="j-globalNavLink j-ui-elem"/>
+        <property name="url" value="/fu/js.jspa"/>
+    </bean>
+
+    <bean id="fuNgNavMenuLink" class="com.jivesoftware.community.navbar.NavMenuLink" scope="prototype">
+        <property name="ID" value="fu-ng"/>
+        <property name="nameKey" value="Fu Ng"/>
+        <property name="linkCss" value="j-globalNavLink j-ui-elem"/>
+        <property name="url" value="/fu/ng.jspa"/>
+    </bean>
+
     <bean id="fuNavbarLink" class="com.jivesoftware.community.util.spring.MergeableCollection" scope="prototype" parent="navBarLinks">
         <property name="source">
             <util:list value-type="com.jivesoftware.community.web.component.ActionLink" scope="prototype">
-                <ref bean ="fuNavMenuLink"/>
+                <ref bean ="fuWSNavMenuLink"/>
+                <ref bean ="fuJSNavMenuLink"/>
+                <ref bean ="fuNgNavMenuLink"/>
             </util:list>
         </property>
     </bean>

@@ -6,19 +6,19 @@
     <package name="TestWebservice-actions" extends="community-default">
 
         <action name ="fu/ws" class="org.tw.spike.jive.plugin.ws.FuAction">
-            <result name="success">/plugins/TestWebservice/resources/templates/ws.jsp</result>
+            <result name="success">/plugins/TestWebservice/resources/templates/ws.ftl</result>
         </action>
 
-        <action name ="fu/jstest" class="org.tw.spike.jive.plugin.ws.FuAction">
-            <result name="success">/plugins/TestWebservice/resources/templates/jstest.ftl</result>
+        <action name ="fu/js" class="org.tw.spike.jive.plugin.ws.FuAction">
+            <result name="success">/plugins/TestWebservice/resources/templates/js.ftl</result>
         </action>
 
-        <action name ="fu/ngtest" class="org.tw.spike.jive.plugin.ws.FuAction">
-            <result name="success">/plugins/TestWebservice/resources/templates/ngtest.ftl</result>
+        <action name ="fu/ng" class="org.tw.spike.jive.plugin.ws.FuAction">
+            <result name="success">/plugins/TestWebservice/resources/templates/ng.ftl</result>
         </action>
 
-        <action name ="fu/embertest" class="org.tw.spike.jive.plugin.ws.FuAction">
-            <result name="success">/plugins/TestWebservice/resources/templates/embertest.ftl</result>
+        <action name ="fu/ember" class="org.tw.spike.jive.plugin.ws.FuAction">
+            <result name="success">/plugins/TestWebservice/resources/templates/ember.ftl</result>
         </action>
     </package>
 </struts>
