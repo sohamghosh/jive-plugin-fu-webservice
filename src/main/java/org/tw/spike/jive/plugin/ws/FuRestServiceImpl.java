@@ -6,17 +6,22 @@ public class FuRestServiceImpl implements FuRestService {
 
     @Override
     public String test() {
-        return "Hola, Mundo!";
+        return "Test...!";
     }
 
     @Override
     public Response testResponse() {
-        return Response.ok().entity("Ola, Mundo!").build();
+        return Response.ok().entity("Response...!").build();
     }
 
     @Override
     public Response submit(User user) {
         System.out.println(user);
+        return Response.ok().build();
+    }
+
+    @Override
+    public Response go() {
         return Response.ok().build();
     }
 }

@@ -1,6 +1,24 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
         "http://struts.apache.org/dtds/struts-2.0.dtd">
 <struts>
+    <constant name="struts.enable.SlashesInActionNames" value="true"/>
+
     <package name="TestWebservice-actions" extends="community-default">
+
+        <action name ="fu/ws" class="org.tw.spike.jive.plugin.ws.FuAction">
+            <result name="success">/plugins/TestWebservice/resources/templates/ws.jsp</result>
+        </action>
+
+        <action name ="fu/jstest" class="org.tw.spike.jive.plugin.ws.FuAction">
+            <result name="success">/plugins/TestWebservice/resources/templates/jstest.ftl</result>
+        </action>
+
+        <action name ="fu/ngtest" class="org.tw.spike.jive.plugin.ws.FuAction">
+            <result name="success">/plugins/TestWebservice/resources/templates/ngtest.ftl</result>
+        </action>
+
+        <action name ="fu/embertest" class="org.tw.spike.jive.plugin.ws.FuAction">
+            <result name="success">/plugins/TestWebservice/resources/templates/embertest.ftl</result>
+        </action>
     </package>
 </struts>

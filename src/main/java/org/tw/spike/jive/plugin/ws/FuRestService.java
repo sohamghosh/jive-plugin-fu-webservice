@@ -18,4 +18,8 @@ public interface FuRestService {
     @POST
     @Path("/submit")
     Response submit(User user);
+
+    @POST
+    @Path("/go")
+    Response go();
 }

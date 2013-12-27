@@ -1,24 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
        xmlns:jaxrs="http://cxf.apache.org/jaxrs"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+            http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
             http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd"
        default-autowire="no" default-init-method="init" default-destroy-method="destroy">
 
-    <bean class="org.tw.spike.jive.plugin.ws.SamplePlugin"/>
+    <bean class="org.tw.spike.jive.plugin.ws.FuPlugin"/>
+
+    <bean id="fuNavMenuLink" class="com.jivesoftware.community.navbar.NavMenuLink" scope="prototype">
+        <property name="ID" value="fu-ws"/>
+        <property name="nameKey" value="Fu WS"/>
+        <property name="linkCss" value="j-globalNavLink j-ui-elem"/>
+        <property name="url" value="/fu/ws.jspa"/>
+    </bean>
+
+    <bean id="fuNavbarLink" class="com.jivesoftware.community.util.spring.MergeableCollection" scope="prototype" parent="navBarLinks">
+        <property name="source">
+            <util:list value-type="com.jivesoftware.community.web.component.ActionLink" scope="prototype">
+                <ref bean ="fuNavMenuLink"/>
+            </util:list>
+        </property>
+    </bean>
 
     <bean id="restServiceImpl" class="org.tw.spike.jive.plugin.ws.FuRestServiceImpl"/>
 
-    <jaxrs:server id="restService" address="/fuservice">
+    <jaxrs:server id="restService" address="/fu">
         <jaxrs:serviceBeans>
             <ref bean="restServiceImpl"/>
         </jaxrs:serviceBeans>
-        <!--<jaxrs:providers>-->
-            <!--<ref bean="jacksonJsonProvider"/>-->
-            <!--&lt;!&ndash;<ref bean="secureJacksonJsonProvider"/>&ndash;&gt;-->
-            <!--&lt;!&ndash;<ref bean="securityInterceptor"/>&ndash;&gt;-->
-        <!--</jaxrs:providers>-->
+        <jaxrs:providers>
+            <ref bean="jacksonJsonProvider"/>
+            <!--<ref bean="secureJacksonJsonProvider"/>-->
+            <ref bean="securityInterceptor"/>
+        </jaxrs:providers>
     </jaxrs:server>
 
 </beans>

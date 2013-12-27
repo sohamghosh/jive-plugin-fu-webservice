@@ -2,7 +2,7 @@ package org.tw.spike.jive.plugin.ws;
 
 import com.jivesoftware.base.plugin.Plugin;
 
-public class SamplePlugin implements Plugin {
+public class FuPlugin implements Plugin {
 
 
     @Override

@@ -5,10 +5,16 @@
     <author>Soham</author>
     <version>1.0.0</version>
 
-    <minServerVersion>6.0</minServerVersion>
-    <maxServerVersion>6.0</maxServerVersion>
+    <minServerVersion>6.0.0</minServerVersion>
+    <maxServerVersion>6.0.9</maxServerVersion>
     
-    <class>org.tw.spike.jive.plugin.ws.SamplePlugin</class>
+    <class>org.tw.spike.jive.plugin.ws.FuPlugin</class>
+
+    <javascript src="/plugins/TestWebservice/resources/script/jstest2.js" />
+
+    <javascript src="/plugins/TestWebservice/resources/script/angular.js" />
+
+    <javascript src="/plugins/TestWebservice/resources/script/ember-1.2.0.js" />
 
 	<!-- 
     <authorURL>
