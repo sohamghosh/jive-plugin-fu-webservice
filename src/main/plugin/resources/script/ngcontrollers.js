@@ -1,33 +1,38 @@
-var demoApp = angular.module('demoApp', ['ngRoute']);
 
-demoApp.config(function ($routeProvider) {
-    $routeProvider
-        .when('/view1', {
-            controller:'SimpleController',
-            templateUrl:'/resources/templates/partials/view1.html'
-        })
-        .when('/view2', {
-            controller:'SimpleController',
-            templateUrl:'/resources/templates/partials/view2.html'
-        })
-        .otherwise({redirectTo: '/view1'});
-});
+var demoApp = angular.module('demoApp', ['ngRoute'])
 
-var controllers = {};
+    .factory('simpleFactory', function () {
+        var factory = {};
+        factory.getCustomers = function () {
+            return [
+                {name: 'Soham', city: 'Bangalore'},
+                {name: 'John Doe', city: 'Delhi'},
+                {name: 'Jane Doe', city: 'Calcutta'}
+            ];
+        };
+        return factory;
+    })
 
-controllers.SimpleController = function ($scope) {
-    $scope.customers = [
-        {name: 'Soham', city: 'Bangalore'},
-        {name: 'John Doe', city: 'Delhi'},
-        {name: 'Jane Doe', city: 'Calcutta'}
-    ];
+    .controller('SimpleController', function ($scope, simpleFactory) {
+        $scope.customers = simpleFactory.getCustomers();
 
-    $scope.addCustomer = function() {
-        $scope.customers.push({
-            name: $scope.newCustomer.name,
-            city: $scope.newCustomer.city
-        });
-    };
-};
+        $scope.addCustomer = function () {
+            $scope.customers.push({
+                name: $scope.newCustomer.name,
+                city: $scope.newCustomer.city
+            });
+        };
+    })
 
-demoApp.controller(controllers);
+    .config(function ($routeProvider) {
+        $routeProvider
+            .when('/view1', {
+                controller: 'SimpleController',
+                templateUrl: '/resources/templates/partials/view1.html'
+            })
+            .when('/view2', {
+                controller: 'SimpleController',
+                templateUrl: '/resources/templates/partials/view2.html'
+            })
+            .otherwise({redirectTo: '/view1'});
+    });
