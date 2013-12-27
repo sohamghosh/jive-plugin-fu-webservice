@@ -50,7 +50,7 @@
         <jaxrs:providers>
             <ref bean="jacksonJsonProvider"/>
             <!--<ref bean="secureJacksonJsonProvider"/>-->
-            <ref bean="securityInterceptor"/>
+            <!--<ref bean="securityInterceptor"/>-->
         </jaxrs:providers>
     </jaxrs:server>
 

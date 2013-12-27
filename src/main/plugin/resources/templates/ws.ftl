@@ -54,9 +54,7 @@
                     type: 'POST',
                     dataType: 'json',
                     contentType: 'application/json',
-                    //data: "{'name': 'Soham', 'city': 'Bangalore'}",
-                    data: JSON.toString("{'name': 'Soham', 'city': 'Bangalore'}"),
-                    //data: "{\"singer\":\"Metallica\",\"title\":\"Fade To Black\"}",
+                    data: '{"name": "Soham", "city": "Bangalore"}',
                     success: function (data) {
                         alert("[Success] Response: " + data.response);
                     },
