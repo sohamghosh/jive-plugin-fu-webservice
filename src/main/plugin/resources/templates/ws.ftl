@@ -40,7 +40,7 @@
                     dataType: 'json',
                     contentType: 'application/json',
                     success: function (data) {
-                        alert("[Success] " + data.name + " - " + data.city);
+                        alert("[Success]");
                     },
                     error: function (data) {
                         alert("[Error]");
@@ -50,13 +50,13 @@
 
             $j("#createUserButton").click(function () {
                 $j.ajax({
-                    url: "/api/fu/userx",
+                    url: "/api/fu/user",
                     type: 'POST',
                     dataType: 'json',
                     contentType: 'application/json',
-                    data: '{"name": "Soham", "city": "Bangalore"}',
+                    data: '{"name": "X", "city": "Y"}',
                     success: function (data) {
-                        alert("[Success] Response: " + data.response);
+                        alert("[Success]");
                     },
                     error: function (data) {
                         alert("[Error]");

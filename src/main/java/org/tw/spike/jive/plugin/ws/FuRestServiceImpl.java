@@ -5,11 +5,22 @@ import net.sf.json.JSONObject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * @see com.jivesoftware.community.webservices.rest.ErrorBuilder
  */
 public class FuRestServiceImpl implements FuRestService {
+
+    private static List<User> users = new ArrayList<User>();
+
+    static {
+        users.add(new User("Soham", "Mumbai"));
+        users.add(new User("Rob", "Delhi"));
+        users.add(new User("Jane", "Bangalore"));
+    }
 
     @Override
     public Response test() {
@@ -26,19 +37,13 @@ public class FuRestServiceImpl implements FuRestService {
     }
 
     @Override
-    public User user() {
-        User user = new User();
-        user.setName("Android");
-        user.setCity("Dalvik");
-        return user;
+    public List<User> user() {
+        return users;
     }
 
     @Override
-    public Response user(User user) {
-        System.out.println(user);
-
-        JSONObject result = new JSONObject();
-        result.put("response", "User created successfully");
-        return Response.ok(result.toString()).build();
+    public User user(User user) {
+        users.add(user);
+        return user;
     }
 }

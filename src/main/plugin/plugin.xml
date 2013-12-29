@@ -14,6 +14,7 @@
 
     <javascript src="/plugins/TestWebservice/resources/script/ng/angular.js" />
     <javascript src="/plugins/TestWebservice/resources/script/ng/angular-route.js" />
+    <javascript src="/plugins/TestWebservice/resources/script/ng/angular-resource.js" />
 
     <!--<javascript src="/plugins/TestWebservice/resources/script/ember/ember-1.2.0.js" />-->
 

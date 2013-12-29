@@ -4,6 +4,8 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import java.util.List;
+
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 
 @Produces(APPLICATION_JSON)
@@ -19,10 +21,10 @@ public interface FuRestService {
 
     @GET
     @Path("/user")
-    User user();
+    List<User> user();
 
     @POST
-    @Path("/userx")
+    @Path("/user")
     @Consumes(APPLICATION_JSON)
-    Response user(User user);
+    User user(User user);
 }
